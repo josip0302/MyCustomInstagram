@@ -6,7 +6,6 @@ import {
     Link,
     Skeleton,
     SkeletonCircle,
-    Text,
 } from "@chakra-ui/react";
 import { timeAgo } from "@/utils/timeAgo";
 import useFollowUser from "@/hooks/useFollowUser";
