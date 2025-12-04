@@ -1,13 +1,7 @@
-import {
-    Flex,
-    Avatar,
-    Text,
-    SkeletonCircle,
-    Skeleton,
-    Link,
-} from "@chakra-ui/react";
+import { Flex, Avatar, Text, SkeletonCircle, Skeleton } from "@chakra-ui/react";
 import useGetUserProfileById from "@/hooks/useGetUserProfileById";
 import { timeAgo } from "@/utils/timeAgo";
+import { Link as RouterLink } from "react-router-dom";
 
 const Comment = ({ comment }: { comment: any }) => {
     const { userProfile, isLoading } = useGetUserProfileById(comment.createdBy);
@@ -16,20 +10,20 @@ const Comment = ({ comment }: { comment: any }) => {
     }
     return (
         <Flex gap={4}>
-            <Link href={`/${userProfile.username}`}>
+            <RouterLink to={`/${userProfile.username}`}>
                 <Avatar.Root size={"sm"}>
                     <Avatar.Fallback name={userProfile.fullName} />
 
                     <Avatar.Image src={userProfile.profilePicURL} />
                 </Avatar.Root>
-            </Link>
+            </RouterLink>
             <Flex direction={"column"}>
                 <Flex gap={2} alignItems={"center"}>
-                    <Link href={`/${userProfile.username}`}>
+                    <RouterLink to={`/${userProfile.username}`}>
                         <Text fontSize={12} fontWeight={"bold"}>
                             {userProfile.username}
                         </Text>
-                    </Link>
+                    </RouterLink>
                     <Text fontSize={14}>{comment.comment}</Text>
                 </Flex>
                 <Text fontSize={14} color={"gray"}>

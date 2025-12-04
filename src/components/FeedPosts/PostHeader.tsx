@@ -3,12 +3,12 @@ import {
     Box,
     Button,
     Flex,
-    Link,
     Skeleton,
     SkeletonCircle,
 } from "@chakra-ui/react";
 import { timeAgo } from "@/utils/timeAgo";
 import useFollowUser from "@/hooks/useFollowUser";
+import { Link as RouterLink } from "react-router-dom";
 const PostHeader = ({
     post,
     creatorProfile,
@@ -28,14 +28,14 @@ const PostHeader = ({
         >
             <Flex alignItems={"center"} fontWeight={"bold"} gap={2}>
                 {creatorProfile ? (
-                    <Link href={`/${creatorProfile?.username}`}>
+                    <RouterLink to={"/" + creatorProfile?.username}>
                         <Avatar.Root size={"sm"}>
                             <Avatar.Fallback name={creatorProfile?.fullname} />
                             <Avatar.Image
                                 src={creatorProfile?.profilePictureURL}
                             />
                         </Avatar.Root>
-                    </Link>
+                    </RouterLink>
                 ) : (
                     <SkeletonCircle size="10" />
                 )}
@@ -48,9 +48,9 @@ const PostHeader = ({
                     gap={2}
                 >
                     {creatorProfile ? (
-                        <Link href={`/${creatorProfile?.username}`}>
+                        <RouterLink to={"/" + creatorProfile?.username}>
                             {creatorProfile?.username}
-                        </Link>
+                        </RouterLink>
                     ) : (
                         <Skeleton height={"10px"} width={"100px"} />
                     )}
