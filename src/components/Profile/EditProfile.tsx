@@ -35,7 +35,6 @@ const EditProfile = ({
 
     useEffect(() => {
         if (authUser) {
-            console.log("Auth User:", authUser);
             setInputs({
                 fullName: authUser.fullname || "",
                 username: authUser.username || "",

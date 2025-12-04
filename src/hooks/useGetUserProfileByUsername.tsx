@@ -31,7 +31,6 @@ const useGetUserProfileByUsername = (username: string) => {
                     userDoc = doc.data();
                 });
                 setUserProfile(userDoc);
-                console.log("Fetched user profile:", userDoc);
             } catch (err: any) {
                 showToast("Error", err?.message, "error");
             } finally {

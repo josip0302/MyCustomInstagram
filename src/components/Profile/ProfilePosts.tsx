@@ -7,7 +7,7 @@ const ProfilePosts = () => {
     if (!isLoading && posts.length === 0) {
         return <NoPostsFound />;
     }
-    console.log("posts", posts);
+
     return (
         <Grid
             templateColumns={{ sm: "repeat(1,1fr)", md: "repeat(3,1fr)" }}

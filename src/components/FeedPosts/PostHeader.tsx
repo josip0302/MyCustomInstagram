@@ -16,7 +16,6 @@ const PostHeader = ({
     post: any;
     creatorProfile: any;
 }) => {
-    console.log("creatorProfile", creatorProfile);
     const { isUpdating, isFollowing, handleFollowUser } = useFollowUser(
         post.createdBy
     );

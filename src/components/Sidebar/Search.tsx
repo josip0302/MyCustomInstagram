@@ -22,7 +22,7 @@ const Search = () => {
         e.preventDefault();
         getUserProfile(searchRef.current?.value || "");
     };
-    console.log("Searched User:", user);
+
     return (
         <Dialog.Root motionPreset="slide-in-left">
             <Dialog.Trigger asChild>
